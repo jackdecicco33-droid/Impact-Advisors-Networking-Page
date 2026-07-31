@@ -70,6 +70,7 @@ function createPersonCard(person) {
 function renderPractice(practice) {
   const roster = colleaguesFor(practice);
   const section = document.createElement("section"); section.id = practice.id; section.className = "practice-section practice-single-section";
+  const overviewPanel = document.createElement("div"); overviewPanel.className = "practice-content-panel practice-overview-panel";
   const heading = document.createElement("h2"); heading.textContent = practice.title;
   const content = document.createElement("div"); content.className = "practice-content";
   practice.paragraphs.forEach((text) => { const p = document.createElement("p"); p.textContent = text; content.appendChild(p); });
@@ -77,10 +78,15 @@ function renderPractice(practice) {
   const list = document.createElement("ul"); list.className = "support-list"; practice.benefits.forEach((text) => { const li = document.createElement("li"); li.textContent = text; list.appendChild(li); });
   const closing = document.createElement("p"); closing.className = "practice-closing"; closing.textContent = practice.closing;
   const orgHeading = document.createElement("h3"); orgHeading.textContent = `${practice.name} Organizational Chart`;
+  const orgPanel = document.createElement("div"); orgPanel.className = "practice-content-panel practice-org-panel";
   const peopleHeading = document.createElement("h3"); peopleHeading.textContent = `Everyone in ${practice.name}`;
+  const peoplePanel = document.createElement("div"); peoplePanel.className = "practice-content-panel practice-people-panel";
   const grid = document.createElement("div"); grid.className = "profiles-grid practice-roster-grid"; grid.replaceChildren(...roster.map(createPersonCard));
   const empty = document.createElement("p"); empty.className = "muted-message"; empty.textContent = "No colleagues are currently listed for this practice.";
-  section.append(heading, content, intro, list, closing, orgHeading, roster.length ? createOrgChart(roster) : empty.cloneNode(true), peopleHeading, roster.length ? grid : empty);
+  overviewPanel.append(heading, content, intro, list, closing);
+  orgPanel.append(orgHeading, roster.length ? createOrgChart(roster) : empty.cloneNode(true));
+  peoplePanel.append(peopleHeading, roster.length ? grid : empty);
+  section.append(overviewPanel, orgPanel, peoplePanel);
   sections.replaceChildren(section);
   history.replaceState(null, "", `#${practice.id}`);
 }

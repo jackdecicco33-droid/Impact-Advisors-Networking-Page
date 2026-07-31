@@ -159,7 +159,11 @@ body {
 .practice-nav-card a { padding: .55rem .3rem; border-bottom: 1px solid var(--border); color: var(--primary); text-decoration: none; font-weight: 700; font-size: .9rem; }
 .practice-sections { display: grid; gap: 1.25rem; min-width: 0; }
 .practice-section { padding: 1.5rem; scroll-margin-top: 1rem; }
-.practice-single-section { width: 100%; }
+.practice-single-section { width: 100%; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; display: grid; gap: 1.4rem; }
+.practice-content-panel { padding: 1.5rem; border: 2px solid var(--border); border-top: 6px solid var(--accent-green); border-radius: 10px; background: var(--surface); box-shadow: var(--shadow); }
+.practice-content-panel > h2, .practice-content-panel > h3 { margin-top: 0; color: var(--primary-strong); }
+.practice-org-panel { border-color: #b9d6e6; border-top-color: var(--primary); }
+.practice-people-panel { border-color: #c9dce8; }
 .practice-section > h2 { margin: 0 0 1rem; color: var(--primary-strong); }
 .practice-section > h3 { color: var(--primary); margin-top: 1.5rem; }
 .practice-content p, .practice-section li, .practice-closing, .muted-message { color: var(--muted); }
@@ -1116,6 +1120,8 @@ button {
   .practice-nav-card nav { grid-template-columns: 1fr; }
   .support-list { columns: 1; }
   .practice-section { padding: 1rem; }
+  .practice-single-section { padding: 0; }
+  .practice-content-panel { padding: 1rem; }
   .practice-org-chart { padding: .8rem; }
   .practice-org-nodes { display: grid; grid-template-columns: 1fr; }
   .practice-org-node { width: 100%; min-height: 0; display: grid; grid-template-columns: 48px 1fr; text-align: left; }
