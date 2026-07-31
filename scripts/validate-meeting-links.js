@@ -20,17 +20,15 @@ if (testPeople.length < 2) throw new Error("At least two employee profiles with 
 
 for (const person of testPeople) {
   const url = new URL(buildOutlookMeetingUrl(person));
-  const firstName = person.name.split(/\s+/)[0];
-  const expectedBody = `Hi ${firstName},\n\nI would appreciate the opportunity to connect and learn more about your role and experience.`;
 
   if (url.origin !== "https://outlook.office.com") throw new Error(`${person.name}: incorrect Outlook origin.`);
   if (url.pathname !== "/calendar/0/deeplink/compose") throw new Error(`${person.name}: incorrect compose path.`);
   if (url.searchParams.get("to") !== person.email) throw new Error(`${person.name}: attendee was not populated.`);
   if (url.searchParams.get("subject") !== `Coffee Chat with ${person.name}`) throw new Error(`${person.name}: subject was not populated.`);
-  if (url.searchParams.get("body") !== expectedBody) throw new Error(`${person.name}: body was not populated.`);
+  if (url.searchParams.has("body")) throw new Error(`${person.name}: body must not be prefilled.`);
   if (url.searchParams.has("startdt") || url.searchParams.has("enddt")) throw new Error(`${person.name}: date or time must not be preselected.`);
 
-  console.log(`${person.name}: attendee, subject, and body validated; no date or time selected.`);
+  console.log(`${person.name}: attendee and subject validated; no body, date, or time selected.`);
 }
 
 const requiredMarkup = [

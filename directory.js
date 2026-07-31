@@ -376,11 +376,9 @@ function createContactRow(label, value, href, options = {}) {
 }
 
 function buildOutlookMeetingUrl(person) {
-  const firstName = person.name.split(/\s+/)[0];
   const params = new URLSearchParams({
     to: person.email,
-    subject: `Coffee Chat with ${person.name}`,
-    body: `Hi ${firstName},\n\nI would appreciate the opportunity to connect and learn more about your role and experience.`
+    subject: `Coffee Chat with ${person.name}`
   });
 
   return `https://outlook.office.com/calendar/0/deeplink/compose?${params.toString()}`;
