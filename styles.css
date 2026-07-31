@@ -195,6 +195,7 @@ body {
 .practice-profile-actions a { padding: .42rem .58rem; border: 1px solid var(--primary-light); border-radius: 6px; background: #fff; color: var(--primary); text-decoration: none; font-size: .75rem; font-weight: 800; }
 .practice-profile-actions a:hover, .practice-profile-actions a:focus-visible { color: #fff; background: var(--primary); }
 .resource-categories { display: grid; gap: 2rem; }
+.resource-featured-list { display: grid; gap: .85rem; width: 100%; }
 .resource-category h2 { color: var(--primary); }
 .resource-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
 .resource-card { padding: 1.4rem; }
