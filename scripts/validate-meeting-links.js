@@ -2,15 +2,15 @@ const fs = require("fs");
 const path = require("path");
 
 const root = path.join(__dirname, "..");
-const directorySource = fs.readFileSync(path.join(root, "directory.js"), "utf8");
-const functionStart = directorySource.indexOf("function buildOutlookMeetingUrl");
-const functionEnd = directorySource.indexOf("function createProfileCard", functionStart);
+const dataSource = fs.readFileSync(path.join(root, "assets", "js", "site-data.js"), "utf8");
+const functionStart = dataSource.indexOf("function buildOutlookMeetingUrl");
+const functionEnd = dataSource.indexOf("\n\nconst people", functionStart);
 
 if (functionStart < 0 || functionEnd < 0) {
-  throw new Error("Could not locate buildOutlookMeetingUrl in directory.js.");
+  throw new Error("Could not locate buildOutlookMeetingUrl in site-data.js.");
 }
 
-const functionSource = directorySource.slice(functionStart, functionEnd);
+const functionSource = dataSource.slice(functionStart, functionEnd);
 const buildOutlookMeetingUrl = Function(`${functionSource}\nreturn buildOutlookMeetingUrl;`)();
 const rosterSource = fs.readFileSync(path.join(root, "assets", "data", "roster-data.js"), "utf8");
 const roster = JSON.parse(rosterSource.slice(rosterSource.indexOf("["), rosterSource.lastIndexOf("]") + 1));
@@ -38,7 +38,7 @@ const requiredMarkup = [
 ];
 
 for (const snippet of requiredMarkup) {
-  if (!directorySource.includes(snippet)) throw new Error(`Missing required scheduling-link markup: ${snippet}`);
+  if (!fs.readFileSync(path.join(root, "directory.js"), "utf8").includes(snippet)) throw new Error(`Missing required scheduling-link markup: ${snippet}`);
 }
 
 console.log("New-tab, safe-rel, and accessible-label attributes validated.");
