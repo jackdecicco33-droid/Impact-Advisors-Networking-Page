@@ -272,8 +272,6 @@ const els = {
   serviceLineInfo: document.getElementById("serviceLineInfo"),
   serviceLineInfoTitle: document.getElementById("serviceLineInfoTitle"),
   serviceLineInfoContent: document.getElementById("serviceLineInfoContent"),
-  clinicalOptimizationCaseStudy: document.getElementById("clinicalOptimizationCaseStudy"),
-  supplyChainCaseStudy: document.getElementById("supplyChainCaseStudy"),
   profilesGrid: document.getElementById("profilesGrid"),
   directoryControls: document.getElementById("directoryControls"),
   showMoreButton: document.getElementById("showMoreButton"),
@@ -442,12 +440,6 @@ function renderServiceLineInfo() {
   const selected = els.serviceLineFilter.value;
   const content = serviceLineInfoContent[selected];
   els.serviceLineInfo.hidden = !content;
-  if (els.clinicalOptimizationCaseStudy) {
-    els.clinicalOptimizationCaseStudy.hidden = selected !== CLINICAL_OPTIMIZATION_SERVICE_LINE;
-  }
-  if (els.supplyChainCaseStudy) {
-    els.supplyChainCaseStudy.hidden = selected !== SUPPLY_CHAIN_SERVICE_LINE;
-  }
   if (!content) return;
 
   els.serviceLineInfoTitle.textContent = content.title;
