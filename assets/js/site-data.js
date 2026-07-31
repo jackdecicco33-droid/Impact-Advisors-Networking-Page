@@ -1,3 +1,4 @@
+(function initializeConnectHubData() {
 const headshotFilenameOverrides = {
   "Andrew Feldmann": "Andrea Feldmann.jpg",
   "Brian Junghans (VP)": "Brian Junghans.jpg",
@@ -67,3 +68,4 @@ function buildOutlookMeetingUrl(person) {
 
 const people = prepareEmployees(window.CONNECT_HUB_EMPLOYEES);
 window.ConnectHubData = { people, employeeKey, getHeadshotUrl, normalizeKey, buildOutlookMeetingUrl };
+})();
