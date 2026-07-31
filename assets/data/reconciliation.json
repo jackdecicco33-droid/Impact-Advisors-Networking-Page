@@ -1,0 +1,30 @@
+{
+    "sourceWorkbook":  "Strategy \u0026 Operations Service Lines (5).xlsx",
+    "worksheet":  "S\u0026O Service Lines",
+    "workbookRosterRows":  132,
+    "validExcelRows":  128,
+    "uniqueEmployees":  128,
+    "generatedWebsiteRecords":  128,
+    "duplicateOrInvalidRows":  4,
+    "countByServiceLine":  {
+                               "Clinical Optimization":  9,
+                               "Health Plan Practice":  9,
+                               "Labor":  10,
+                               "Operational Excellence":  35,
+                               "Physician Enterprise Services":  12,
+                               "Quality":  5,
+                               "Revenu Cycle Margin Improvement - Oracle Health":  11,
+                               "Revenue Cycle Managed Services":  16,
+                               "Revenue Cycle Margin Improvement":  13,
+                               "Supply Chain":  12
+                           },
+    "added":  [
+
+              ],
+    "updated":  [
+
+                ],
+    "removed":  [
+                    "Amy Guo"
+                ]
+}

@@ -1,0 +1,38 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Dependencies and generated build/test output
+node_modules/
+dist/
+build/
+coverage/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.tmp
+*.temp
+~$*
+
+# Local editor and agent metadata
+.agents/
+.codex/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local verification artifacts
+*-layout-test.png
+*-resource-test.png
+*-test-download.pdf
+
+# Unused internal sample removed from the website
+/assets/documents/Clinical_Optimization_Hypothetical_Deliverable.pdf
