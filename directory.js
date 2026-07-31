@@ -153,21 +153,6 @@ function renderProfiles() {
   els.directoryControls.hidden = els.showMoreButton.hidden && els.showLessButton.hidden;
 }
 
-function renderFeaturedResources() {
-  const container = document.getElementById("homeResourceLinks");
-  const featured = (window.CONNECT_HUB_RESOURCES || []).filter((resource) => resource.featuredOnHome);
-  container.replaceChildren(...featured.map((resource) => {
-    const link = document.createElement("a");
-    link.className = "quick-link-button";
-    link.href = resource.path;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.setAttribute("aria-label", resource.ariaLabel);
-    link.textContent = resource.buttonText;
-    return link;
-  }));
-}
-
 function init() {
   populateSelect(els.serviceLineFilter, people.flatMap((person) => person.serviceLines), "All Service Lines");
   populateSelect(els.titleFilter, people.map((person) => person.title), "All Titles");
@@ -182,7 +167,6 @@ function init() {
   });
   els.showMoreButton.addEventListener("click", () => { visibleCount += PAGE_SIZE; renderProfiles(); });
   els.showLessButton.addEventListener("click", () => { visibleCount = PAGE_SIZE; renderProfiles(); els.peopleSection.scrollIntoView({ behavior: "smooth" }); });
-  renderFeaturedResources();
   renderProfiles();
 }
 
