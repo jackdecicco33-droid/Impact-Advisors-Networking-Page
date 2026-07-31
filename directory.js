@@ -442,7 +442,7 @@ function createProfileCard(person) {
   }
   if (person.email) {
     const schedule = document.createElement("a");
-    schedule.className = "action-btn secondary";
+    schedule.className = "action-btn schedule-meeting-btn";
     schedule.textContent = "Schedule a Meeting";
     schedule.href = buildOutlookMeetingUrl(person);
     schedule.target = "_blank";
