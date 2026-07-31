@@ -205,6 +205,10 @@ body {
   outline-offset: 3px;
 }
 
+.featured-resource-card + .featured-resource-card {
+  margin-top: 0.75rem;
+}
+
 .featured-resource-icon {
   display: grid;
   width: 54px;
