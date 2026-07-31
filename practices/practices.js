@@ -41,18 +41,30 @@ function createOrgChart(roster) {
 }
 
 function createPersonCard(person) {
-  const card = document.createElement("article"); card.className = "practice-profile-card";
-  const header = document.createElement("div"); header.className = "practice-profile-header";
-  const copy = document.createElement("div"); const name = document.createElement("h4"); name.textContent = person.name;
-  const role = document.createElement("p"); role.textContent = person.title || "Title not listed"; copy.append(name, role); header.append(createAvatar(person, "practice-profile-avatar"), copy);
-  const details = document.createElement("p"); details.className = "practice-profile-location"; details.textContent = person.location || "Location not listed";
-  const actions = document.createElement("div"); actions.className = "practice-profile-actions";
+  const card = document.createElement("article"); card.className = "profile-card";
+  const header = document.createElement("div"); header.className = "profile-top";
+  const avatar = document.createElement("div"); avatar.className = "avatar"; avatar.setAttribute("aria-hidden", "true"); avatar.textContent = person.name.split(/\s+/).map((part) => part[0]).slice(0, 2).join("").toUpperCase();
+  const image = document.createElement("img"); image.src = getHeadshotUrl(person.name, "../"); image.alt = ""; image.addEventListener("error", () => image.remove(), { once: true }); avatar.appendChild(image);
+  const copy = document.createElement("div"); const name = document.createElement("h4"); name.className = "name"; name.textContent = person.name;
+  const role = document.createElement("p"); role.className = "role"; role.textContent = person.title || "Not listed"; copy.append(name, role); header.append(avatar, copy);
+  const details = document.createElement("dl"); details.className = "profile-details";
+  [["Service Line", person.serviceLines, "tag-blue"], ["Location", [person.location], "tag-green"]].forEach(([label, values, tagClass]) => {
+    const term = document.createElement("dt"); term.textContent = label; const description = document.createElement("dd");
+    values.filter(Boolean).forEach((value) => { const tag = document.createElement("span"); tag.className = `profile-tag ${tagClass}`; tag.textContent = value; description.appendChild(tag); });
+    if (!description.childNodes.length) description.textContent = "Not listed"; details.append(term, description);
+  });
+  const contacts = document.createElement("div"); contacts.className = "contact-links";
+  [["LinkedIn", person.linkedin, person.linkedin, "LinkedIn", true], ["Email", person.email, `mailto:${person.email}`, person.email, false]].forEach(([label, value, href, text, external]) => {
+    const row = document.createElement("div"); row.className = "contact-row"; const rowLabel = document.createElement("span"); rowLabel.textContent = label;
+    const content = document.createElement(value ? "a" : "span"); content.className = value ? "profile-link" : "profile-link muted-link"; content.textContent = value ? text : "Not listed";
+    if (value) content.href = href; if (value && external) { content.target = "_blank"; content.rel = "noopener noreferrer"; } row.append(rowLabel, content); contacts.appendChild(row);
+  });
+  const actions = document.createElement("div"); actions.className = "card-actions";
+  if (person.linkedin || person.email) { const connect = document.createElement("a"); connect.className = "action-btn primary"; connect.href = person.linkedin || `mailto:${person.email}`; connect.textContent = "Connect"; if (person.linkedin) { connect.target = "_blank"; connect.rel = "noopener noreferrer"; } actions.appendChild(connect); }
   if (person.email) {
-    const email = document.createElement("a"); email.href = `mailto:${person.email}`; email.textContent = "Email"; email.setAttribute("aria-label", `Email ${person.name}`); actions.appendChild(email);
-    const schedule = document.createElement("a"); schedule.href = buildOutlookMeetingUrl(person); schedule.target = "_blank"; schedule.rel = "noopener noreferrer"; schedule.textContent = "Schedule a Meeting"; schedule.setAttribute("aria-label", `Schedule a meeting with ${person.name}`); actions.appendChild(schedule);
+    const schedule = document.createElement("a"); schedule.className = "action-btn secondary"; schedule.href = buildOutlookMeetingUrl(person); schedule.target = "_blank"; schedule.rel = "noopener noreferrer"; schedule.textContent = "Schedule a Meeting"; schedule.setAttribute("aria-label", `Schedule a meeting with ${person.name}`); actions.appendChild(schedule);
   }
-  if (person.linkedin) { const linkedin = document.createElement("a"); linkedin.href = person.linkedin; linkedin.target = "_blank"; linkedin.rel = "noopener noreferrer"; linkedin.textContent = "LinkedIn"; linkedin.setAttribute("aria-label", `View ${person.name} on LinkedIn`); actions.appendChild(linkedin); }
-  card.append(header, details, actions); return card;
+  card.append(header, details, contacts, actions); return card;
 }
 
 function renderPractice(practice) {
@@ -66,7 +78,7 @@ function renderPractice(practice) {
   const closing = document.createElement("p"); closing.className = "practice-closing"; closing.textContent = practice.closing;
   const orgHeading = document.createElement("h3"); orgHeading.textContent = `${practice.name} Organizational Chart`;
   const peopleHeading = document.createElement("h3"); peopleHeading.textContent = `Everyone in ${practice.name}`;
-  const grid = document.createElement("div"); grid.className = "practice-profile-grid"; grid.replaceChildren(...roster.map(createPersonCard));
+  const grid = document.createElement("div"); grid.className = "profiles-grid practice-roster-grid"; grid.replaceChildren(...roster.map(createPersonCard));
   const empty = document.createElement("p"); empty.className = "muted-message"; empty.textContent = "No colleagues are currently listed for this practice.";
   section.append(heading, content, intro, list, closing, orgHeading, roster.length ? createOrgChart(roster) : empty.cloneNode(true), peopleHeading, roster.length ? grid : empty);
   sections.replaceChildren(section);
