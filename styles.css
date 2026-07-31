@@ -826,17 +826,6 @@ button {
   background: #f0f8ff;
 }
 
-.action-btn.schedule-meeting-btn {
-  border-color: var(--accent-green);
-  background: var(--accent-green);
-  color: var(--text);
-}
-
-.action-btn.schedule-meeting-btn:hover {
-  border-color: var(--accent-green-strong);
-  background: #80b239;
-}
-
 .directory-controls {
   display: flex;
   justify-content: center;
