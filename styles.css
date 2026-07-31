@@ -447,6 +447,102 @@ body {
   }
 }
 
+.practice-case-study {
+  margin: 0 0 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 8px 20px rgba(0, 92, 138, 0.07);
+  animation: service-line-info-enter 180ms ease-out;
+}
+
+.practice-case-study[hidden] {
+  display: none;
+}
+
+.case-study-header {
+  padding: 1rem 1.25rem;
+  background: var(--primary-strong);
+  color: #fff;
+}
+
+.case-study-header p,
+.case-study-header h4 {
+  margin: 0;
+}
+
+.case-study-header p {
+  margin-bottom: 0.15rem;
+  color: var(--primary-light);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.case-study-header h4 {
+  font-size: 1.12rem;
+}
+
+.case-study-header span {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: 0.9rem;
+  opacity: 0.88;
+}
+
+.case-study-background {
+  padding: 1rem 1.25rem;
+  background: var(--surface-soft);
+  border-bottom: 1px solid var(--border);
+}
+
+.practice-case-study h5 {
+  margin: 0 0 0.45rem;
+  color: var(--primary-strong);
+  font-size: 0.95rem;
+}
+
+.case-study-background p {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.case-study-background p:last-child {
+  margin-bottom: 0;
+}
+
+.case-study-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  padding: 1rem 1.25rem 0;
+}
+
+.case-study-card {
+  padding: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.practice-case-study ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.practice-case-study li {
+  margin-bottom: 0.35rem;
+}
+
+.practice-case-study li:last-child {
+  margin-bottom: 0;
+}
+
 .service-line-org-chart {
   margin: 0 0 1rem;
   overflow: hidden;
@@ -994,6 +1090,17 @@ button {
 
   .org-chart-title {
     align-self: start;
+  }
+
+  .case-study-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .case-study-header,
+  .case-study-background,
+  .case-study-columns {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .card-actions {
