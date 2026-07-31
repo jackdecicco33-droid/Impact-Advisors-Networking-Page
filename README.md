@@ -1,5 +1,23 @@
 # Connect Hub
 
+Connect Hub is a static three-page site: the people directory at `/`, consolidated practice information at `/practices/`, and the resource library at `/resources/`.
+
+## Local preview
+
+No build step is required. From the project root, run:
+
+```powershell
+node scripts/serve-site.js
+```
+
+Then open `http://localhost:8080/`. Validate the site with:
+
+```powershell
+node scripts/validate-three-page-site.js
+node scripts/validate-service-line-content.js
+node scripts/validate-meeting-links.js
+```
+
 Connect Hub is a static internal employee directory. The employee cards, search,
 filters, statistics, service-line rosters, and organizational charts all use the
 single generated dataset at `assets/data/roster-data.js`.

@@ -1,22 +1,16 @@
 const fs = require("fs");
 const path = require("path");
 
-const directoryPath = path.join(__dirname, "..", "directory.js");
-const source = fs.readFileSync(directoryPath, "utf8");
-const contentEnd = source.indexOf("\nfunction clean");
-
-if (contentEnd < 0) {
-  throw new Error("Could not locate the service-line content block in directory.js.");
-}
-
-const declarations = source.slice(0, contentEnd);
-const content = Function(`${declarations}\nreturn serviceLineInfoContent;`)();
+const dataPath = path.join(__dirname, "..", "assets", "data", "practice-data.js");
+const source = fs.readFileSync(dataPath, "utf8");
+const content = Function(`const window = {};\n${source}\nreturn window.CONNECT_HUB_PRACTICES;`)();
 const countWords = (value) =>
   (value.match(/[A-Za-z0-9]+(?:[’'-][A-Za-z0-9]+)*/g) || []).length;
 
 let hasErrors = false;
 
-Object.entries(content).forEach(([serviceLine, section]) => {
+content.forEach((section) => {
+  const serviceLine = section.name;
   const text = [
     section.title,
     ...section.paragraphs,
