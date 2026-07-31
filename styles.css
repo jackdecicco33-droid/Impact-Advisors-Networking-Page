@@ -779,6 +779,10 @@ a.profile-link:focus-visible {
   margin-top: auto;
 }
 
+.card-actions .action-btn {
+  flex: 1 1 0;
+}
+
 button {
   font: inherit;
 }

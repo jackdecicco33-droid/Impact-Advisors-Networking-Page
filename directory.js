@@ -375,6 +375,17 @@ function createContactRow(label, value, href, options = {}) {
   return row;
 }
 
+function buildOutlookMeetingUrl(person) {
+  const firstName = person.name.split(/\s+/)[0];
+  const params = new URLSearchParams({
+    to: person.email,
+    subject: `Coffee Chat with ${person.name}`,
+    body: `Hi ${firstName},\n\nI would appreciate the opportunity to connect and learn more about your role and experience.`
+  });
+
+  return `https://outlook.office.com/calendar/0/deeplink/compose?${params.toString()}`;
+}
+
 function createProfileCard(person) {
   const card = document.createElement("article");
   card.className = "profile-card";
@@ -430,6 +441,16 @@ function createProfileCard(person) {
       connect.rel = "noopener noreferrer";
     }
     actions.appendChild(connect);
+  }
+  if (person.email) {
+    const schedule = document.createElement("a");
+    schedule.className = "action-btn secondary";
+    schedule.textContent = "Schedule a Meeting";
+    schedule.href = buildOutlookMeetingUrl(person);
+    schedule.target = "_blank";
+    schedule.rel = "noopener noreferrer";
+    schedule.setAttribute("aria-label", `Schedule a meeting with ${person.name}`);
+    actions.appendChild(schedule);
   }
 
   card.append(top, details, contacts, actions);
