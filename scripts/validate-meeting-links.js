@@ -4,7 +4,7 @@ const path = require("path");
 const root = path.join(__dirname, "..");
 const directorySource = fs.readFileSync(path.join(root, "directory.js"), "utf8");
 const functionStart = directorySource.indexOf("function buildOutlookMeetingUrl");
-const functionEnd = directorySource.indexOf("\n\nfunction createProfileCard", functionStart);
+const functionEnd = directorySource.indexOf("function createProfileCard", functionStart);
 
 if (functionStart < 0 || functionEnd < 0) {
   throw new Error("Could not locate buildOutlookMeetingUrl in directory.js.");
