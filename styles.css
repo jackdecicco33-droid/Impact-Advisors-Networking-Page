@@ -177,6 +177,8 @@ body {
 .practice-person-card h4 { font-size: .88rem; color: var(--text); }
 .practice-person-card p { font-size: .76rem; color: var(--muted); }
 .back-to-top { display: inline-block; margin-top: 1.25rem; }
+.back-to-top-container { display: flex; justify-content: center; padding: 1.5rem 0 0; }
+.back-to-top-button { display: inline-flex; width: auto; min-width: 150px; }
 .practice-org-chart { display: grid; gap: 1rem; padding: 1.25rem; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-soft); overflow: hidden; }
 .practice-org-level { position: relative; text-align: center; }
 .practice-org-level:not(:last-child) { padding-bottom: 1.5rem; }
