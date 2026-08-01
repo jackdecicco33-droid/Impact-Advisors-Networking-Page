@@ -25,7 +25,7 @@ content.forEach((section) => {
   if (section.benefits.length < 4 || section.benefits.length > 6) issues.push("must have 4–6 bullets");
   if (wordCount < 130 || wordCount > 190) issues.push("must contain 130–190 words");
   if (!section.title.startsWith("What is ") || !section.title.endsWith("?")) issues.push("must use a ‘What is …?’ heading");
-  if (!section.listIntro.endsWith("support may include:")) issues.push("must use the standard support-area introduction");
+  if (!section.listIntro.endsWith("services may include:")) issues.push("must use the standard services introduction");
 
   if (issues.length > 0) {
     hasErrors = true;
