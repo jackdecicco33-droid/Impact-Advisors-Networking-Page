@@ -18,12 +18,12 @@ window.CONNECT_HUB_PRACTICES = [
     rosterKey: "Health Plan Practice",
     title: "What is Health Plan Practice?",
     paragraphs: [
-      "Health Plan Practice helps organizations that finance and administer healthcare coverage improve their products, operations, and relationships with members and providers. Health plans use this service to manage cost, access, quality, compliance, and the experience of receiving coverage.",
-      "The work may involve commercial insurers, Medicare and Medicaid programs, provider-sponsored plans, and accountable care organizations. Common areas include health plan products, provider networks, claims, utilization management, payment integrity, care management, data, and core administrative systems."
+      "Health Plan Practice provides organizations that finance and administer healthcare coverage with strategies to strengthen performance, manage cost, and improve value for members and providers. The practice focuses on aligning products, operations, networks, data, and technology to support sustainable growth and effective healthcare delivery.",
+      "The work may span commercial insurers, Medicare and Medicaid programs, provider-sponsored plans, and accountable care organizations. It often addresses how health plans design products, manage provider relationships, administer claims, oversee utilization, and improve quality and member experience."
     ],
     listIntro: "Health Plan Practice services may include:",
-    benefits: ["Health plan product and market strategy", "Provider network and access improvement", "Claims, payment integrity, and core operations", "Utilization and care management", "Value-based care and provider contracting", "Quality, compliance, data, and reporting"],
-    closing: "The goal is to create well-coordinated health plan operations that responsibly manage coverage and serve members and providers effectively."
+    benefits: ["Product and market strategy", "Provider network optimization", "Claims and payment integrity", "Utilization and care management", "Value-based care and contracting", "Quality, compliance, data, and reporting"],
+    closing: "The goal is to create more coordinated, efficient, and sustainable health plan operations that deliver value to members, providers, and the organization."
   },
   {
     id: "physician-enterprise",
