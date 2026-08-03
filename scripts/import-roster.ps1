@@ -460,6 +460,12 @@ function Get-Reconciliation {
 
 $rawCurrentRecords = Import-WorksheetRows -Path $WorkbookPath -SheetName $WorksheetName
 $currentRecords = Import-WorksheetRows -Path $WorkbookPath -SheetName $WorksheetName -Validate -AllowCrossService:$AllowCrossServiceAssignments
+$previousRecords = if (-not [string]::IsNullOrWhiteSpace($CompareWorkbookPath)) {
+  Import-WorksheetRows -Path $CompareWorkbookPath -SheetName $WorksheetName -AllowCrossService
+}
+else {
+  @()
+}
 $json = $currentRecords | ConvertTo-Json -Depth 4
 $roundTripRecords = $json | ConvertFrom-Json
 $roundTripCount = $roundTripRecords.Count
@@ -513,7 +519,6 @@ $reconciliation = [ordered]@{
 }
 
 if (-not [string]::IsNullOrWhiteSpace($CompareWorkbookPath)) {
-  $previousRecords = Import-WorksheetRows -Path $CompareWorkbookPath -SheetName $WorksheetName -AllowCrossService
   $changes = Get-Reconciliation -PreviousRecords $previousRecords -CurrentRecords $currentRecords
   $reconciliation.added = $changes.added
   $reconciliation.updated = $changes.updated

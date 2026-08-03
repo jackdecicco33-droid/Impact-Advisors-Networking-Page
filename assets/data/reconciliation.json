@@ -1,30 +1,36 @@
 {
-    "sourceWorkbook":  "Strategy \u0026 Operations Service Lines (5).xlsx",
+    "sourceWorkbook":  "Strategy \u0026 Operations Service Lines (6).xlsx",
     "worksheet":  "S\u0026O Service Lines",
-    "workbookRosterRows":  132,
-    "validExcelRows":  128,
-    "uniqueEmployees":  128,
-    "generatedWebsiteRecords":  128,
-    "duplicateOrInvalidRows":  4,
+    "workbookRosterRows":  137,
+    "validExcelRows":  134,
+    "uniqueEmployees":  134,
+    "generatedWebsiteRecords":  134,
+    "duplicateOrInvalidRows":  3,
     "countByServiceLine":  {
-                               "Clinical Optimization":  9,
+                               "Clinical Optimization":  8,
                                "Health Plan Practice":  9,
                                "Labor":  10,
                                "Operational Excellence":  35,
-                               "Physician Enterprise Services":  12,
+                               "Physician Enterprise Services":  13,
                                "Quality":  5,
                                "Revenu Cycle Margin Improvement - Oracle Health":  11,
                                "Revenue Cycle Managed Services":  16,
-                               "Revenue Cycle Margin Improvement":  13,
-                               "Supply Chain":  12
+                               "Revenue Cycle Margin Improvement":  15,
+                               "Supply Chain":  15
                            },
     "added":  [
-
+                  "Akshita Ponnuru",
+                  "Hayden Keller",
+                  "Khushi Patel",
+                  "Lily Notes",
+                  "Logan Hiskes",
+                  "Martin You",
+                  "Sanya Patel"
               ],
     "updated":  [
-
+                    "Andrea Feldmann"
                 ],
     "removed":  [
-                    "Amy Guo"
+                    "Stephanie Zhou"
                 ]
 }

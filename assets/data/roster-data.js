@@ -182,17 +182,6 @@ window.CONNECT_HUB_EMPLOYEES = [
         "email":  "connie.mcneely@impact-advisors.com"
     },
     {
-        "name":  "Stephanie Zhou",
-        "serviceLines":  [
-                             "Clinical Optimization",
-                             "Quality"
-                         ],
-        "title":  "Managing Consultant",
-        "location":  "New York",
-        "linkedin":  "https://www.linkedin.com/in/stephaniezhou7/",
-        "email":  "stephanie.zhou@impact-advisors.com"
-    },
-    {
         "name":  "Melissa Lingle",
         "serviceLines":  [
                              "Clinical Optimization",
@@ -1261,7 +1250,7 @@ window.CONNECT_HUB_EMPLOYEES = [
                          ],
         "title":  "Managing Consultant",
         "location":  "Kentucky",
-        "linkedin":  "",
+        "linkedin":  "https://www.linkedin.com/in/andrea-feldmann-0095136/",
         "email":  "andrea.feldmann@impact-advisors.com"
     },
     {
@@ -1283,5 +1272,75 @@ window.CONNECT_HUB_EMPLOYEES = [
         "location":  "Oklahoma",
         "linkedin":  "https://www.linkedin.com/in/jenifer-vaught-742489274/",
         "email":  "jenifer.vaught@impact-advisors.com"
+    },
+    {
+        "name":  "Logan Hiskes",
+        "serviceLines":  [
+                             "Physician Enterprise Services"
+                         ],
+        "title":  "Consultant",
+        "location":  "Chicago",
+        "linkedin":  "https://www.linkedin.com/in/logan-hiskes/",
+        "email":  "logan.hiskes@impact-advisors.com"
+    },
+    {
+        "name":  "Martin You",
+        "serviceLines":  [
+                             "Supply Chain"
+                         ],
+        "title":  "Consultant",
+        "location":  "Chicago",
+        "linkedin":  "https://www.linkedin.com/in/martin-you1/",
+        "email":  "martin.you@impact-advisors.com"
+    },
+    {
+        "name":  "Akshita Ponnuru",
+        "serviceLines":  [
+                             "Supply Chain"
+                         ],
+        "title":  "Consultant",
+        "location":  "Chicago",
+        "linkedin":  "https://www.linkedin.com/in/akshita-ponnuru/",
+        "email":  "akshita.ponnuru@impact-advisors.com"
+    },
+    {
+        "name":  "Hayden Keller",
+        "serviceLines":  [
+                             "Revenue Cycle Margin Improvement"
+                         ],
+        "title":  "Consultant",
+        "location":  "Chicago",
+        "linkedin":  "https://www.linkedin.com/in/haydenmkeller/",
+        "email":  "hayden.keller@impact-advisors.com"
+    },
+    {
+        "name":  "Lily Notes",
+        "serviceLines":  [
+                             "Revenue Cycle Margin Improvement"
+                         ],
+        "title":  "Consultant",
+        "location":  "Chicago",
+        "linkedin":  "https://www.linkedin.com/in/lily-notes-593653265/",
+        "email":  "lily.notes@impact-advisors.com"
+    },
+    {
+        "name":  "Khushi Patel",
+        "serviceLines":  [
+                             "Quality"
+                         ],
+        "title":  "Consultant",
+        "location":  "Chicago",
+        "linkedin":  "https://www.linkedin.com/in/khushipatellll/",
+        "email":  "khushi.patel@impact-advisors.com"
+    },
+    {
+        "name":  "Sanya Patel",
+        "serviceLines":  [
+                             "Supply Chain"
+                         ],
+        "title":  "Consultant",
+        "location":  "Chicago",
+        "linkedin":  "https://www.linkedin.com/in/sanya-patel-7340bb22b/",
+        "email":  "sanya.patel@impact-advisors.com"
     }
 ];

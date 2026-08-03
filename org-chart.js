@@ -106,9 +106,14 @@ class ServiceLineOrgChart {
       level("Associate Director", [find("Robyn O'Connell")]),
       level("Managing Consultants", [
         find("Andrea Feldmann"),
-        find("Corey Armstrong"),
-        find("Jenifer Vaught", { displayTitle: "Managing Consultant" })
-      ])
+        find("Corey Armstrong")
+      ]),
+      level("Senior Consultants", employees.filter((employee) =>
+        employee.title === "Senior Consultant"
+      )),
+      level("Consultants", employees.filter((employee) =>
+        employee.title === "Consultant"
+      ))
     ].filter((item) => item.employees.length > 0);
   }
 

@@ -9,16 +9,5 @@ window.CONNECT_HUB_RESOURCES = [
     buttonText: "View Networking Guide",
     ariaLabel: "Open the Networking Guide and Tip Sheet PDF",
     featuredOnHome: true
-  },
-  {
-    category: "Organizational Resources",
-    label: "Strategy & Operations Resource",
-    title: "Organizational Chart by Service Line",
-    description: "A service-line view of the Strategy & Operations organizational structure and team leadership.",
-    type: "PDF",
-    path: "assets/documents/SO-Organizational-Chart-by-Service-Line.pdf",
-    buttonText: "View Organizational Chart",
-    ariaLabel: "Open the Strategy and Operations Organizational Chart by Service Line PDF",
-    featuredOnHome: true
   }
 ];
