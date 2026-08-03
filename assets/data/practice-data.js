@@ -27,7 +27,7 @@ window.CONNECT_HUB_PRACTICES = [
   },
   {
     id: "physician-enterprise",
-    name: "Physician Enterprise",
+    name: "Physician Enterprise Services",
     rosterKey: "Physician Enterprise Services",
     title: "What is Physician Enterprise Services?",
     paragraphs: [
