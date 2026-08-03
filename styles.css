@@ -185,7 +185,9 @@ body {
 .practice-org-level:not(:last-child)::after { content: ""; position: absolute; left: 50%; bottom: .1rem; width: 2px; height: 1.25rem; background: var(--accent-green); }
 .practice-org-level h4 { margin: 0 0 .7rem; color: var(--primary); font-size: .84rem; letter-spacing: .08em; text-transform: uppercase; }
 .practice-org-nodes { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
-.practice-org-node { width: 190px; min-height: 150px; display: flex; flex-direction: column; align-items: center; padding: .9rem; border: 1px solid var(--border); border-top: 4px solid var(--accent-green); border-radius: 8px; background: #fff; box-shadow: 0 8px 18px rgba(0,92,138,.08); }
+.practice-org-node { width: 190px; min-height: 150px; display: flex; flex-direction: column; align-items: center; padding: .9rem; border: 1px solid var(--border); border-top: 4px solid var(--accent-green); border-radius: 8px; background: #fff; box-shadow: 0 8px 18px rgba(0,92,138,.08); color: inherit; font: inherit; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
+.practice-org-node:hover { transform: translateY(-3px); box-shadow: 0 14px 26px rgba(0,92,138,.15); }
+.practice-org-node:focus-visible { outline: 3px solid rgba(47,128,183,.35); outline-offset: 3px; }
 .practice-org-avatar { width: 62px; height: 62px; margin-bottom: .55rem; border-radius: 50%; overflow: hidden; background: var(--bg-accent); }
 .practice-org-avatar img, .practice-profile-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .practice-org-node strong { color: var(--text); font-size: .9rem; }

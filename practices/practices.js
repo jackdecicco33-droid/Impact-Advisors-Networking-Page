@@ -19,8 +19,24 @@ function createAvatar(person, className) {
   avatar.appendChild(image); return avatar;
 }
 
+function profileId(person) {
+  const identity = person.email || `${person.name}-${person.serviceLines.join("-")}`;
+  return `practice-profile-${normalizeKey(identity).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
+}
+
+function scrollToProfile(person) {
+  const card = document.getElementById(profileId(person));
+  if (!card) return;
+  document.querySelectorAll(".profile-card.org-chart-target").forEach((item) => item.classList.remove("org-chart-target"));
+  card.classList.add("org-chart-target");
+  card.scrollIntoView({ behavior: "smooth", block: "center" });
+  window.setTimeout(() => card.classList.remove("org-chart-target"), 1800);
+}
+
 function createOrgNode(person) {
-  const node = document.createElement("article"); node.className = "practice-org-node";
+  const node = document.createElement("button"); node.className = "practice-org-node"; node.type = "button";
+  node.setAttribute("aria-label", `View ${person.name}'s contact information`);
+  node.addEventListener("click", () => scrollToProfile(person));
   const name = document.createElement("strong"); name.textContent = person.name;
   const role = document.createElement("span"); role.textContent = person.title || "Title not listed";
   node.append(createAvatar(person, "practice-org-avatar"), name, role); return node;
@@ -42,6 +58,7 @@ function createOrgChart(roster) {
 
 function createPersonCard(person) {
   const card = document.createElement("article"); card.className = "profile-card";
+  card.id = profileId(person);
   const header = document.createElement("div"); header.className = "profile-top";
   const avatar = document.createElement("div"); avatar.className = "avatar"; avatar.setAttribute("aria-hidden", "true"); avatar.textContent = person.name.split(/\s+/).map((part) => part[0]).slice(0, 2).join("").toUpperCase();
   const image = document.createElement("img"); image.src = getHeadshotUrl(person.name, "../"); image.alt = ""; image.addEventListener("error", () => image.remove(), { once: true }); avatar.appendChild(image);
