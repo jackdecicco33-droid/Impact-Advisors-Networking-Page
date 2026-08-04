@@ -182,7 +182,6 @@ body {
 .practice-org-chart { display: grid; gap: 1rem; padding: 1.25rem; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-soft); overflow: hidden; }
 .practice-org-level { position: relative; text-align: center; }
 .practice-org-level:not(:last-child) { padding-bottom: 1.5rem; }
-.practice-org-level:not(:last-child)::after { content: ""; position: absolute; left: 50%; bottom: .1rem; width: 2px; height: 1.25rem; background: var(--accent-green); }
 .practice-org-level h4 { margin: 0 0 .7rem; color: var(--primary); font-size: .84rem; letter-spacing: .08em; text-transform: uppercase; }
 .practice-org-nodes { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; }
 .practice-org-node { width: 190px; min-height: 150px; display: flex; flex-direction: column; align-items: center; padding: .9rem; border: 1px solid var(--border); border-top: 4px solid var(--accent-green); border-radius: 8px; background: #fff; box-shadow: 0 8px 18px rgba(0,92,138,.08); color: inherit; font: inherit; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease; }
@@ -603,17 +602,6 @@ body {
 
 .org-chart-level:last-child {
   padding-bottom: 0;
-}
-
-.org-chart-level:not(:last-child)::after {
-  content: "";
-  position: absolute;
-  bottom: 0.25rem;
-  left: 50%;
-  width: 2px;
-  height: 1.5rem;
-  background: linear-gradient(var(--primary-medium), var(--accent-green));
-  transform: translateX(-50%);
 }
 
 .org-chart-level-label {
@@ -1078,11 +1066,6 @@ button {
 
   .org-chart-level {
     padding-bottom: 1.7rem;
-  }
-
-  .org-chart-level:not(:last-child)::after {
-    bottom: 0.2rem;
-    height: 1.3rem;
   }
 
   .org-chart-people {

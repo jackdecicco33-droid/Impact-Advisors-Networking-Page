@@ -129,7 +129,7 @@ class ServiceLineOrgChart {
         ${levels.map((level, index) => this.renderLevel(level, index)).join("")}
       </div>
       <p class="org-chart-note">
-        Organized by role level within the ${serviceLine} Practice. Lines indicate practice hierarchy and do not necessarily represent direct reporting relationships.
+        Organized by title within the ${serviceLine} Practice.
       </p>
     `;
   }

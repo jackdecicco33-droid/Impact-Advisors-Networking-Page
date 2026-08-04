@@ -66,7 +66,7 @@ function appendDetailTags(details, label, values, className) {
   if (!populated.length) description.textContent = "Not listed";
   populated.forEach((value) => {
     const tag = document.createElement("span");
-    tag.className = `profile-tag ${className}`;
+    tag.className = `profile-tag ${className}${label === "Service Line" ? " profile-tag-single-line" : ""}`;
     tag.textContent = value;
     description.appendChild(tag);
   });
