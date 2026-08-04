@@ -815,7 +815,8 @@ body {
   overflow-wrap: anywhere;
 }
 
-.profile-tag-single-line {
+.profile-tag-single-line,
+.profile-details dd:first-of-type .profile-tag {
   font-size: 0.72rem;
   white-space: nowrap;
 }
