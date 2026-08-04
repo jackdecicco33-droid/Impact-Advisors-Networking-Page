@@ -1,5 +1,5 @@
 {
-    "sourceWorkbook":  "Strategy \u0026 Operations Service Lines (6).xlsx",
+    "sourceWorkbook":  "Strategy \u0026 Operations Service Lines (8).xlsx",
     "worksheet":  "S\u0026O Service Lines",
     "workbookRosterRows":  137,
     "validExcelRows":  134,
@@ -19,18 +19,12 @@
                                "Supply Chain":  15
                            },
     "added":  [
-                  "Akshita Ponnuru",
-                  "Hayden Keller",
-                  "Khushi Patel",
-                  "Lily Notes",
-                  "Logan Hiskes",
-                  "Martin You",
-                  "Sanya Patel"
+
               ],
     "updated":  [
-                    "Andrea Feldmann"
+
                 ],
     "removed":  [
-                    "Stephanie Zhou"
+
                 ]
 }
