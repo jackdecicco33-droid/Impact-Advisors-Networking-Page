@@ -1342,5 +1342,15 @@ window.CONNECT_HUB_EMPLOYEES = [
         "location":  "Chicago",
         "linkedin":  "https://www.linkedin.com/in/sanya-patel-7340bb22b/",
         "email":  "sanya.patel@impact-advisors.com"
+    },
+    {
+        "name":  "Liam Ford",
+        "serviceLines":  [
+                             "Revenue Cycle Margin Improvement"
+                         ],
+        "title":  "Consultant",
+        "location":  "Chicago",
+        "linkedin":  "https://www.linkedin.com/in/liam-ford-6075b1213/",
+        "email":  "liam.ford@impact-advisors.com"
     }
 ];
