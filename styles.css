@@ -799,6 +799,7 @@ body {
 
 .profile-details dd {
   margin: 0;
+  min-width: 0;
   color: var(--muted);
   overflow-wrap: anywhere;
 }
@@ -818,7 +819,7 @@ body {
 .profile-tag-single-line,
 .profile-details dd:first-of-type .profile-tag {
   font-size: 0.72rem;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .tag-blue {
