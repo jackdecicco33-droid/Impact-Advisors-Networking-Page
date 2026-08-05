@@ -819,7 +819,7 @@ body {
 .profile-tag-single-line,
 .profile-details dd:first-of-type .profile-tag {
   font-size: 0.72rem;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .tag-blue {
