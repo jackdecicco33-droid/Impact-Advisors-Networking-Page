@@ -1352,5 +1352,15 @@ window.CONNECT_HUB_EMPLOYEES = [
         "location":  "Chicago",
         "linkedin":  "https://www.linkedin.com/in/liam-ford-6075b1213/",
         "email":  "liam.ford@impact-advisors.com"
+    },
+    {
+        "name":  "Holly Ezell",
+        "serviceLines":  [
+                             "Revenue Cycle Margin Improvement"
+                         ],
+        "title":  "Director",
+        "location":  "Nashville",
+        "linkedin":  "https://www.linkedin.com/in/holly-ezell-b8338330/",
+        "email":  "Holly.ezell@impact-advisors.com"
     }
 ];
