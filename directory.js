@@ -4,6 +4,9 @@ const titleRank = new Map([
   ["Managing Director", 3], ["Director", 4], ["Associate Director", 5],
   ["Managing Consultant", 6], ["Senior Consultant", 7], ["Consultant", 8], ["Analyst", 9]
 ]);
+const serviceLineLabels = new Map([
+  ["Revenu Cycle Margin Improvement - Oracle Health", "RCMI - Oracle Health"]
+]);
 
 const { people, employeeKey, getHeadshotUrl, buildOutlookMeetingUrl } = window.ConnectHubData;
 let visibleCount = PAGE_SIZE;
@@ -29,9 +32,13 @@ function uniqueSorted(values) {
   return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b));
 }
 
-function populateSelect(select, values, allLabel) {
+function displayServiceLine(value) {
+  return serviceLineLabels.get(value) || value;
+}
+
+function populateSelect(select, values, allLabel, displayValue = (value) => value) {
   select.replaceChildren(new Option(allLabel, ""));
-  uniqueSorted(values).forEach((value) => select.add(new Option(value, value)));
+  uniqueSorted(values).forEach((value) => select.add(new Option(displayValue(value), value)));
 }
 
 function getFilteredPeople() {
@@ -40,7 +47,7 @@ function getFilteredPeople() {
   const title = els.titleFilter.value;
   const location = els.locationFilter.value;
   return people.filter((person) => {
-    const blob = [person.name, person.title, ...person.serviceLines, person.location, person.email, person.linkedin].join(" ").toLowerCase();
+    const blob = [person.name, person.title, ...person.serviceLines, ...person.serviceLines.map(displayServiceLine), person.location, person.email, person.linkedin].join(" ").toLowerCase();
     return (!term || blob.includes(term)) &&
       (!serviceLine || person.serviceLines.includes(serviceLine)) &&
       (!title || person.title === title) &&
@@ -67,7 +74,7 @@ function appendDetailTags(details, label, values, className) {
   populated.forEach((value) => {
     const tag = document.createElement("span");
     tag.className = `profile-tag ${className}${label === "Service Line" ? " profile-tag-single-line" : ""}`;
-    tag.textContent = value;
+    tag.textContent = label === "Service Line" ? displayServiceLine(value) : value;
     description.appendChild(tag);
   });
   details.append(term, description);
@@ -154,7 +161,7 @@ function renderProfiles() {
 }
 
 function init() {
-  populateSelect(els.serviceLineFilter, people.flatMap((person) => person.serviceLines), "All Service Lines");
+  populateSelect(els.serviceLineFilter, people.flatMap((person) => person.serviceLines), "All Service Lines", displayServiceLine);
   populateSelect(els.titleFilter, people.map((person) => person.title), "All Titles");
   populateSelect(els.locationFilter, people.map((person) => person.location), "All Locations");
   els.heroTotalPeople.textContent = String(people.length);
