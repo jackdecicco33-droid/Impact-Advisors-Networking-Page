@@ -47,8 +47,7 @@ function getFilteredPeople() {
   const title = els.titleFilter.value;
   const location = els.locationFilter.value;
   return people.filter((person) => {
-    const blob = [person.name, person.title, ...person.serviceLines, ...person.serviceLines.map(displayServiceLine), person.location, person.email, person.linkedin].join(" ").toLowerCase();
-    return (!term || blob.includes(term)) &&
+    return (!term || person.name.toLowerCase().includes(term)) &&
       (!serviceLine || person.serviceLines.includes(serviceLine)) &&
       (!title || person.title === title) &&
       (!location || person.location === location);

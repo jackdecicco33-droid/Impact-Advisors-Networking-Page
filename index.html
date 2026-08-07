@@ -38,8 +38,8 @@
     <section id="people" class="people-section"><div class="container">
       <div class="section-header"><h2>Find Colleagues</h2><p>Use search and filters to find the right person for a project question, introduction, or coffee chat.</p></div>
       <div class="filters-card" aria-label="Search and filter profiles"><div class="filter-grid">
-        <div class="filter-field search-field"><label for="searchInput">Search</label><div class="search-input-row">
-          <input id="searchInput" type="search" placeholder="Search name, practice, title, location, LinkedIn, or email" />
+        <div class="filter-field search-field"><label for="searchInput">Search by Name</label><div class="search-input-row">
+          <input id="searchInput" type="search" placeholder="Enter a name" autocomplete="off" />
           <button id="clearSearchButton" class="clear-search-button" type="button">Clear</button>
         </div></div>
         <div class="filter-field"><label for="serviceLineFilter">Practice</label><select id="serviceLineFilter"><option value="">All Practices</option></select></div>
@@ -55,7 +55,7 @@
   </main>
   <script src="assets/data/roster-data.js?v=20260804-1"></script>
   <script src="assets/js/site-data.js"></script>
-  <script src="directory.js?v=20260807-1"></script>
+  <script src="directory.js?v=20260807-2"></script>
   <script>document.getElementById("clearSearchButton").addEventListener("click",()=>{const input=document.getElementById("searchInput");input.value="";input.dispatchEvent(new Event("input",{bubbles:true}));input.focus();});</script>
 </body>
 </html>
