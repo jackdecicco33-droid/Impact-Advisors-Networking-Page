@@ -1346,7 +1346,7 @@ window.CONNECT_HUB_EMPLOYEES = [
     {
         "name":  "Liam Ford",
         "serviceLines":  [
-                             "Revenue Cycle Margin Improvement"
+                             "Operational Excellence"
                          ],
         "title":  "Consultant",
         "location":  "Chicago",

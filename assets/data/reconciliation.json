@@ -1,5 +1,5 @@
 {
-    "sourceWorkbook":  "Strategy \u0026 Operations Service Lines (10).xlsx",
+    "sourceWorkbook":  "Strategy \u0026 Operations Service Lines (9).xlsx",
     "worksheet":  "S\u0026O Service Lines",
     "workbookRosterRows":  138,
     "validExcelRows":  135,
@@ -10,12 +10,12 @@
                                "Clinical Optimization":  8,
                                "Health Plan Practice":  9,
                                "Labor":  10,
-                               "Operational Excellence":  35,
+                               "Operational Excellence":  36,
                                "Physician Enterprise Services":  13,
                                "Quality":  5,
                                "Revenu Cycle Margin Improvement - Oracle Health":  11,
                                "Revenue Cycle Managed Services":  16,
-                               "Revenue Cycle Margin Improvement":  16,
+                               "Revenue Cycle Margin Improvement":  15,
                                "Supply Chain":  15
                            },
     "added":  [
