@@ -66,7 +66,7 @@ window.CONNECT_HUB_PRACTICES = [
   },
   {
     id: "revenue-cycle-margin-improvement-oracle-health",
-    name: "Oracle Health",
+    name: "RCMI - Oracle Health",
     rosterKey: "Revenu Cycle Margin Improvement - Oracle Health",
     title: "What is Revenue Cycle Margin Improvement – Oracle Health?",
     paragraphs: [
